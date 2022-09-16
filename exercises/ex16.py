@@ -12,7 +12,7 @@ canOfPaint = {
   "price": 80
 }
 
-amountCanOfPaint = areaToPaint / canOfPaint["coverageByLiter"]
+amountCanOfPaint = (areaToPaint / canOfPaint["coverageByLiter"]) / canOfPaint["liters"]
 
 # 'math.ceil' rounds the number to the next integer
 totalPrice = math.ceil(amountCanOfPaint) * canOfPaint["price"]

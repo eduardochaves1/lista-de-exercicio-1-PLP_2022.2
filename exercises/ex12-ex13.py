@@ -8,7 +8,7 @@
 sex = input('Qual seu sexo [f/m]? ')
 altura = float(input('Digite sua altura em metros (ex.: 1.65): '))
 
-if sex == 'f':
+if sex == 'f' or sex == 'F':
   idealWeight = 62.1 * altura - 44.7
 else:
   idealWeight = 72.7 * altura - 58

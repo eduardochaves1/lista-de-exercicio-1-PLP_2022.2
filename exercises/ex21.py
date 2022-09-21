@@ -23,6 +23,5 @@ for city in range(0,nRegristrations):
     cities.update({cityInput: input(f'+ Digite a informação que você deseja adicionar à cidade de {cityInput}: ')})
 
 
-print()
-print(f'- A cidade com o maior nome foi {biggestName}')
+print(f'\n - A cidade com o maior nome foi {biggestName}')
 print(cities)

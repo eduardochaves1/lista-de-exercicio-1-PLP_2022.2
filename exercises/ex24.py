@@ -9,5 +9,4 @@ for i in range(1,4):
   if len(string) > len(biggestString):
     biggestString = string
 
-print()
-print(f'- A maior de todas as palavras foi "{biggestString}" com {len(biggestString)} letras')
+print(f'\n - A maior de todas as palavras foi "{biggestString}" com {len(biggestString)} letras')

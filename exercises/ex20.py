@@ -36,7 +36,6 @@ while continueRegistration == True:
   if continueChoice == 's' or continueChoice == 'S':
     studentAnswers.clear()
     rightAnswers = 0
-    print()
   else:
-    print('Até a próxima!')
+    print('\n Até a próxima!')
     continueRegistration = False

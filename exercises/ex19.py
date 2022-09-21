@@ -5,17 +5,14 @@
 numbers = []
 
 for number in range(1,11):
-  numbers.append(input(f'+ [{number}º] Digite um número de 0 à 9: '))
+  numbers.append(int(input(f'+ [{number}º] Digite um número de 0 à 9: ')))
 
-nChecks = int(input('+ Quantos números você quer verificar na lista? '))
-print()
+nChecks = int(input('\n + Quantos números você quer verificar na lista? '))
 
 for check in range(1,nChecks+1):
-  number = input(f'? Digite o {check}º número a ser verificado: ')
+  verifyNumber = int(input(f'\n ? Digite o {check}º número a ser verificado: '))
 
-  if numbers.count(number) > 0:
-    print(f'- Este número está presente no index {numbers.index(number)} da lista')
+  if numbers.count(verifyNumber) > 0:
+    print(f' - Este número está presente no Index {numbers.index(verifyNumber)} da lista')
   else:
-    print('- Este número não está presente na lista.')
-  
-  print()
+    print(' - Este número não está presente na lista.')

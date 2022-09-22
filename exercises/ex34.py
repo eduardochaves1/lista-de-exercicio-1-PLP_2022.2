@@ -22,8 +22,7 @@ while proceedRegristration == True:
   if proceedChoice == 'n' or proceedChoice == 'N':
     proceedRegristration = False
 
-proceedSearch = True
-while proceedSearch == True:
+while True:
   cpfSearch = int(input('\n ? Digite o CPF da pessoa que desaja saber o IMC: '))
   personName = people[cpfSearch]["name"]
   personIMC = people[cpfSearch]["imc"]
@@ -32,4 +31,4 @@ while proceedSearch == True:
   proceedChoice = input('\n ? Desejas pesquisar sobre o IMC de outra pessoa [s/n]? ')
   if proceedChoice == 'n' or proceedChoice == 'N':
     print('- Até a próxima!')
-    proceedSearch = False
+    break

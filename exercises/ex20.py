@@ -11,9 +11,8 @@
 answers = ('C','B','D','B','D','A','A','B','B','A','C','A','A','D','D','E','B','C','D','C')
 studentAnswers = []
 rightAnswers = 0
-continueRegistration = True
 
-while continueRegistration == True:
+while True:
   print('Atênção! Digite apenas letras maiúsculas, ex.: A, B, C, D, E!')
   arrayIndex = -1
 
@@ -38,4 +37,4 @@ while continueRegistration == True:
     rightAnswers = 0
   else:
     print('\n Até a próxima!')
-    continueRegistration = False
+    break

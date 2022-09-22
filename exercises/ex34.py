@@ -5,8 +5,7 @@
 people = {}
 
 personOrder = 0
-proceedRegristration = True
-while proceedRegristration == True:
+while True:
   personOrder += 1
   name = input(f'\n + [{personOrder}] Digite o nome da pessoa: ')
   height = float(input(f'+ [{personOrder}] Digite a altura da pessoa [ex.: 1.67]: '))
@@ -20,7 +19,7 @@ while proceedRegristration == True:
 
   proceedChoice = input('\n ? Desejas cadastrar outra pessoa [s/n]? ')
   if proceedChoice == 'n' or proceedChoice == 'N':
-    proceedRegristration = False
+    break
 
 while True:
   cpfSearch = int(input('\n ? Digite o CPF da pessoa que desaja saber o IMC: '))

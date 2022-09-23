@@ -7,7 +7,7 @@
 # mensagens adequadas.
 
 maxWeight = 50
-overloadFee = 4
+overloadFee = 4 # per kilo
 
 weightAcumulated = float(input('Diga lá João Papo-de-Pescador, quantos kg tu pegou de peixe hoje? '))
 

@@ -25,11 +25,15 @@ monthlyWorkingTime = int(input('+ Quantas horas você trabalhou neste mês? '))
 
 salary = incomeByHour + monthlyWorkingTime
 print(f'Seu salário é de R${salary:.2f}')
+
 netIncomeTax = salary * incomeTax
 print(f'O valor descontado por conta do IR é de R${netIncomeTax:.2f}')
+
 netInssTax = salary * inssTax
 print(f'O valor descontado por conta do INSS é de R${netInssTax:.2f}')
+
 netSyndicteTax = salary * syndicteTax
 print(f'O valor descontado por conta do sindicato é de R${netSyndicteTax:.2f}')
+
 netSalary = salary - netIncomeTax - netInssTax - netSyndicteTax
 print(f'O seu salário líquido no final das contas é de R${netSalary:.2f}')

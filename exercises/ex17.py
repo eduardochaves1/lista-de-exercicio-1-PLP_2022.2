@@ -10,7 +10,9 @@
 # •  comprar apenas galões de 3,6 litros;
 # •  misturar latas e galões, de forma que o desperdício de tinta seja menor. Acrescente 10% de folga e
 #    sempre arredonde os valores para cima, isto é, considere latas cheias.
+
 import math
+# PS.: This algorithm will use the "math" lib with 'math.floor' to round the number to the previous integer and 'math.ceil' to round the number to the next integer
 
 areaToPaint = float(input('+ Digite a área em m² a ser pintada: '))
 
@@ -26,23 +28,36 @@ gallonOfPaint = {
 paintCoverageByLiter = 6 #in square meters
 amountOfPaint = (areaToPaint / paintCoverageByLiter) * 1.1 # the "1.1" multiplication is for 10% addition in the calculation
 
-onlyAmountOfCan = amountOfPaint / canOfPaint["liters"]
-onlyAmountOfGallon = amountOfPaint / gallonOfPaint["liters"]
 
-# 'math.floor' rounds the number to the previous integer
-amountOfCan = math.ceil(amountOfPaint) / canOfPaint["liters"]
-amountOfPaintOverloaded = (amountOfCan - math.floor(amountOfCan)) * canOfPaint["liters"]
-amountOfGallon = amountOfPaintOverloaded / gallonOfPaint["liters"]
+# these 2 variables below are been used to calculate the *exclusive* amount of Cans OR Gallons, in which are the first 2 points in this exercise
+onlyAmountOfCan = math.ceil(amountOfPaint / canOfPaint["liters"])
+onlyAmountOfGallon = math.ceil(amountOfPaint / gallonOfPaint["liters"])
 
-# 'math.ceil' rounds the number to the next integer
-totalPriceCan = math.ceil(onlyAmountOfCan) * canOfPaint["price"]
-totalPriceGallon = math.ceil(onlyAmountOfGallon) * gallonOfPaint["price"]
-totalPriceBoth = (math.floor(amountOfCan) * canOfPaint["price"]) + (math.ceil(amountOfGallon) * gallonOfPaint["price"])
 
-print(f'- Você vai precisar comprar {math.ceil(onlyAmountOfCan)} latas de tinta para cobrir esta área, custando um total de R${totalPriceCan:.2f}. Levando um total de {math.ceil(onlyAmountOfCan) * canOfPaint["liters"]}L de tinta.')
+# these 3 variables below are been used to calculate the amount of Cans AND Gallons, in which is the third point in this exercise
+bothAmountOfCan = math.ceil(amountOfPaint) / canOfPaint["liters"]
 
-print(f'- Ou {math.ceil(onlyAmountOfGallon)} galões de tinta para cobrir esta área, custando um total de R${totalPriceGallon:.2f}. Levando um total de {math.ceil(onlyAmountOfGallon) * gallonOfPaint["liters"]}L de tinta.')
+# "amountOfPaintOverloaded" will help the algorithm to calculate the amount of Gallons needed to complete the amount of paint that the Can of paint couldn't fill
+amountOfPaintOverloaded = (bothAmountOfCan - math.floor(bothAmountOfCan)) * canOfPaint["liters"]
+bothAmountOfGallon = amountOfPaintOverloaded / gallonOfPaint["liters"]
 
-print(f'- Ou {math.floor(amountOfCan)} latas de tinta mais {math.ceil(amountOfGallon)} galões de tinta para cobrir esta área, custando um total de R${totalPriceBoth:.2f}. Levando um total de {(math.floor(amountOfCan) * canOfPaint["liters"]) + (math.ceil(amountOfGallon) * gallonOfPaint["liters"])}L de tinta.')
+
+# down below the algorithm is calculating the total price based on the amount of...
+#  Cans OR Gallons needed
+totalPriceCan = onlyAmountOfCan * canOfPaint["price"]
+totalPriceGallon = onlyAmountOfGallon * gallonOfPaint["price"]
+
+# Cans AND Gallons needed
+totalPriceBoth = (math.floor(bothAmountOfCan) * canOfPaint["price"]) + (math.ceil(bothAmountOfGallon) * gallonOfPaint["price"])
+
+
+print(f'- Você vai precisar comprar {onlyAmountOfCan} latas de tinta para cobrir esta área, custando um total de R${totalPriceCan:.2f}. Levando um total de {onlyAmountOfCan * canOfPaint["liters"]}L de tinta.')
+
+
+print(f'- Ou {onlyAmountOfGallon} galões de tinta para cobrir esta área, custando um total de R${totalPriceGallon:.2f}. Levando um total de {onlyAmountOfGallon * gallonOfPaint["liters"]}L de tinta.')
+
+
+print(f'- Ou {math.floor(bothAmountOfCan)} latas de tinta, mais {math.ceil(bothAmountOfGallon)} galões de tinta para cobrir esta área, custando um total de R${totalPriceBoth:.2f}. Levando um total de {(math.floor(bothAmountOfCan) * canOfPaint["liters"]) + (math.ceil(bothAmountOfGallon) * gallonOfPaint["liters"])}L de tinta.')
+
 
 print('- O que você acha que vale mais apena? 🤔')

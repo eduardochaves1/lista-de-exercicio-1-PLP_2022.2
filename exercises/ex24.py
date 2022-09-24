@@ -5,7 +5,9 @@ biggestString = ''
 
 for i in range(1,4):
   string = input(f'+ [{i}] Digite uma palavra: ')
+
   print(f'- Esta palavra tem {len(string)} letras')
+  
   if len(string) > len(biggestString):
     biggestString = string
 

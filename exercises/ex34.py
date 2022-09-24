@@ -4,9 +4,13 @@
 # pessoas ou parar.//
 people = {}
 
+# this "personOrder" is not an important variable in the algorithm, I just used this just for the
+# console to print the person order in which the user is regestring
 personOrder = 0
+
 while True:
   personOrder += 1
+
   name = input(f'\n + [{personOrder}] Digite o nome da pessoa: ')
   height = float(input(f'+ [{personOrder}] Digite a altura da pessoa [ex.: 1.67]: '))
   weight = float(input(f'+ [{personOrder}] Digite o peso da pessoa [ex.: 52.3]: '))
@@ -22,9 +26,11 @@ while True:
     break
 
 while True:
-  cpfSearch = int(input('\n ? Digite o CPF da pessoa que desaja saber o IMC: '))
+  cpfSearch = int(input('\n ? Digite o CPF da pessoa que desaja saber o IMC [somente números]: '))
+
   personName = people[cpfSearch]["name"]
   personIMC = people[cpfSearch]["imc"]
+  
   print(f'- O IMC de {personName} (CPF: {cpfSearch}) é de {personIMC:.1f}')
 
   proceedChoice = input('\n ? Desejas pesquisar sobre o IMC de outra pessoa [s/n]? ')

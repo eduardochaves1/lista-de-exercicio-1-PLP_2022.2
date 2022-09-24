@@ -14,6 +14,10 @@ for student in range(0, nStudents):
 
 print()
 for student in students:
+  # these two methods down below stands for "dictionary[key][value]" so by that, we're accessing the
+  # keys and values so we can print them, and calculate the respective student's avarage
   name = students[student]['name']
+
   avarage = (students[student]['grade1'] + students[student]['grade2']) / 2
+
   print(f'- O aluno {name} de matrícula {student} teve uma média de {avarage}')

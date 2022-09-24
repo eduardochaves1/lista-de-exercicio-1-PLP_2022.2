@@ -20,27 +20,30 @@
 # - Total de descontos: R$ 165,00
 # - Salário Liquido: R$ 935,00
 
-fgts = 1.11
-inss = 1.1
+fgts = .11
+inss = .1
 workedHours = int(input('+ Quantas horas você trabalha por mês? '))
 hourValue = int(input('+ Quanto vale a sua hora? R$'))
 bruteSalary = hourValue * workedHours
 
-if bruteSalary <= 900:
-  ir = 1
-elif bruteSalary > 900 and bruteSalary <= 1500:
-  ir = 1.05
+if bruteSalary > 900 and bruteSalary <= 1500:
+  ir = .05
 elif bruteSalary > 1500 and bruteSalary <= 2500:
-  ir = 1.1
+  ir = .1
 else:
-  ir = 1.2
+  ir = .2
 
-totalFees = bruteSalary * (inss + ir - 1) - bruteSalary
+totalFees = bruteSalary * (inss + ir)
 netSalary = bruteSalary - totalFees
 
 print(f'- Salário Bruto: R${bruteSalary:.2f}')
-print(f'- INSS ({(inss - 1) * 100:.0f}%): R${(bruteSalary * inss) - bruteSalary :.2f}')
-print(f'- IR ({(ir - 1) * 100:.0f}%): R${(bruteSalary * ir) - bruteSalary :.2f}')
-print(f'- FGTS ({(fgts - 1) * 100:.0f}%): R${(bruteSalary * fgts) - bruteSalary :.2f}')
+
+print(f'- INSS ({inss * 100:.0f}%): R${bruteSalary * inss :.2f}')
+
+print(f'- IR ({ir * 100:.0f}%): R${bruteSalary * ir :.2f}')
+
+print(f'- FGTS ({fgts * 100:.0f}%): R${bruteSalary * fgts :.2f}')
+
 print(f'- Total de Descontos: R${totalFees:.2f}')
+
 print(f'- Salário Líquido: R${netSalary:.2f}')

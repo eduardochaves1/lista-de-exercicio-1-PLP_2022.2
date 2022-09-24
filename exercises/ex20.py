@@ -14,6 +14,9 @@ rightAnswers = 0
 
 while True:
   print('Atênção! Digite apenas letras maiúsculas, ex.: A, B, C, D, E!')
+  # this "arrayIndex" will help the conditions inside the 'for loop' down below to know the apropriate index to look
+  # for, inside the "answers" tuple (it starts with -1 as the first condition inside the for loop will increase this
+  # var with +1, so it start with the apropriate 0 index)
   arrayIndex = -1
 
   for studentAnswer in answers:
@@ -25,7 +28,7 @@ while True:
 
   if rightAnswers == len(answers):
     print('Esse aí deve ter filado ein...')
-  elif rightAnswers >= (len(answers) * .6):
+  elif rightAnswers >= (len(answers) * .6): #.6 multiplication stands for 60% of answers tuple amount of values
     print('- O aluno está Classificado!')
   else:
     print('- O aluno está Desclassificado')

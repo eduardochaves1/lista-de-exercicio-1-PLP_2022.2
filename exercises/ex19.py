@@ -12,6 +12,8 @@ nChecks = int(input('\n + Quantos números você quer verificar na lista? '))
 for check in range(1,nChecks+1):
   verifyNumber = int(input(f'\n ? Digite o {check}º número a ser verificado: '))
 
+# the ".count" mathod will verify the amount of times a certain variable is present inside a colection,
+# so if it is greater than 0, it will of course be there...
   if numbers.count(verifyNumber) > 0:
     print(f' - Este número está presente no Index {numbers.index(verifyNumber)} da lista')
   else:

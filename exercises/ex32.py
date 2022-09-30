@@ -17,8 +17,10 @@ questions = [
 ]
 
 print('i - Para todas as perguntas, responda "s" ou "n":')
+
 for question in questions:
   answer = input(question)
+  
   if answer == 's' or answer == 'S':
     questionsMarked += 1
 

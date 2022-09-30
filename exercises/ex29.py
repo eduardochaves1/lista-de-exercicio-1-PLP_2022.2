@@ -17,12 +17,15 @@ oldSalary = float(input('+ Digite o seu salário atual: R$'))
 if oldSalary <= 280:
   percentageIncreased = 1.2
   salary = oldSalary * percentageIncreased
+
 elif oldSalary > 280 and oldSalary <= 700:
   percentageIncreased = 1.15
   salary = oldSalary * percentageIncreased
+
 elif oldSalary > 700 and oldSalary <= 1500:
   percentageIncreased = 1.1
   salary = oldSalary * percentageIncreased
+  
 else:
   percentageIncreased = 1.05
   salary = oldSalary * percentageIncreased
